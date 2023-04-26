@@ -5,8 +5,9 @@ class Cardnews extends HTMLElement{
         const shadow = this.attachShadow({mode: "open"});
         shadow.appendChild(this.build());
         shadow.appendChild(this.styles());
+    }
 
-    build(){
+    build() {
         const componentRoot = document.createElement("div");
         componentRoot.setAttribute("class", "card");
 
@@ -14,8 +15,15 @@ class Cardnews extends HTMLElement{
         cardLeft.setAttribute("class", "card__left");
 
         const autor = document.createElement("span");
+        autor.textContent = "By " + (this.getAttribute("autor") || "By Anonymoys");
+
+
         const linkTitle = document.createElement("a");
+        linkTitle.textContent =  this.getAttribute("title");
+        linkTitle.href = this.getAttribute("link-url");
+
         const newsContent = document.createElement("p");
+        newsContent.textContent = this.getAttribute("content");
 
         cardLeft.appendChild(autor);
         cardLeft.appendChild(linkTitle);
@@ -25,7 +33,8 @@ class Cardnews extends HTMLElement{
         cardRight.setAttribute("class", "card__right");
 
         const newsImage = document.createElement("img");
-
+        newsImage.src = this.getAttribute("photo") || "assets/foto-default.jpg";
+        newsImage.alt = "Foto da Noticia"
         cardRight.appendChild(newsImage);
 
         componentRoot.appendChild(cardLeft);
@@ -36,6 +45,6 @@ class Cardnews extends HTMLElement{
 
         styles(){}
     }
-}
+
 
 customElements.define("card-news", Cardnews);
