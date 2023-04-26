@@ -10,25 +10,20 @@
     <script src="src/Components/TituloDinamico.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card__left">
-                <span>By Marcelo Silva</span>
-                <a href="#">Darth Vader Contrata Devs</a>
-                <p>Darth Vader procura desenvolvedorres que sabem trabalhar com componentes.</p>
-            </div>
-            <div class="card__right">
-                <img src="assets/asset-vader.png" alt="">
-            </div>
-        </div>
-    </div>
+    <div class="app-root">
+    
+    <card-news 
+        autor="Marcelo"
+        title="Darth Vade Contrata"
+        link-url="www.google.com"
+        photo="assets/asset-vader.png"
+        content="Darth Vader procura desenvolvedorres que sabem trabalhar com componentes."
+        ></card-news>
 
-    <card-news autor="Marcelo"
-    title="Darth Vade Contrata"
-    link-url="www.google.com"
-    photo="assets/asset-vader.png"
-    content="Darth Vader procura desenvolvedorres que sabem trabalhar com componentes."
-    >
-</card-news>
+    <card-news 
+        title="Titanic 111 anos"
+        link-url="www.google.com/Titanic"
+        content="Titanic 111 anos no naufragio, acontece o relançamento do"
+        ></card-news>
 </body>
 </html>
