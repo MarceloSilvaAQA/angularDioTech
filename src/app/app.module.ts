@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {ListaModule} from './lista/lista.module';
 import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,7 +17,8 @@ import { CompAtributosComponent } from './comp-atributos/comp-atributos.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ListaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
