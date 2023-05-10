@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -9,7 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class CardComponent implements OnInit {
 
   constructor(
-    private parametrizador: ActivatedRoute) {
+    private parametrizador: ActivatedRoute,
+    private navegador: Router) {
 
       //http:localhost:4200/portifolio/{1}
       this.parametrizador.params.subscribe(
@@ -23,6 +24,9 @@ export class CardComponent implements OnInit {
      }
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.navegador.navigate(['/'])
+    }, 5000)
   }
 
 }
