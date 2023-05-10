@@ -5,7 +5,7 @@ import { CardComponent } from './pages/portifolio/card/card.component';
 
 const routes: Routes = [
   {path: '', component: TitleComponent, pathMatch: 'full'},
-  {path: 'portifolio', component: CardComponent},
+  {path: 'portifolio/:id', component: CardComponent},
   {path: '**', redirectTo: ''}
 ];
 

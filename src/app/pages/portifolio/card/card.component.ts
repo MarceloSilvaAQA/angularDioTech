@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private parametrizador: ActivatedRoute) {
+      this.parametrizador.params.subscribe(
+        res => console.log(res)
+      )
+     }
 
   ngOnInit(): void {
   }
