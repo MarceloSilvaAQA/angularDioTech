@@ -5,7 +5,14 @@ import { CardComponent } from './pages/portifolio/card/card.component';
 
 const routes: Routes = [
   {path: '', component: TitleComponent, pathMatch: 'full'},
-  {path: 'portifolio/:id', component: CardComponent},
+  //portifolio
+  //portifolio/1
+  //portifolio/1/abc
+  {path: 'portifolio', component: CardComponent, children: [
+    {path: ':id', component: CardComponent},
+    {path: ':id/:token', component: CardComponent},
+
+  ]},
   {path: '**', redirectTo: ''}
 ];
 
