@@ -1,10 +1,10 @@
 <div class="card">
   <div class="card__title">
-    <h3> {{ name }} </h3>
+    <h3> {{ pokemon.name }} </h3>
   </div>
 
   <div class="card__body">
-    <img src="" alt="pokemon" srcset="">
+    <img [src]="pokemon.sprites.front_default" alt="pokemon" srcset="">
   </div>
 
   <div class="card__stats">
