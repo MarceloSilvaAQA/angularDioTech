@@ -8,27 +8,34 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  pokemon:PokemonData | any
+  pokemon:PokemonData
   attributesTypes: string[] = ['FIRE', 'ROCK']
   constructor(
     private service: PokemonService
   ) {
 
+    this.pokemon = {
+      id: 0,
+      name: '',
+      sprites: {
+        front_default: ''
+      },
+      types: []
+    }
+
    }
 
   ngOnInit(): void {
-    this.service.getPokemon("charizard").subscribe( {
-      next: (resp) => {
+    this.service.getPokemon("charizard").subscribe(
+      {
+        next: (resp) => {
+
         this.pokemon = {
           id: resp.id,
           name: resp.name,
           sprites: resp.sprites,
           types: resp.types
         }
-
-
-        console.log(resp)
-        console.log(this.pokemon)
       },
       error: (err) => console.log(err)
     })

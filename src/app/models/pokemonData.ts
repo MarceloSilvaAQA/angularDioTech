@@ -4,5 +4,11 @@ export type PokemonData = {
   sprites: {
     front_default:string
   }
-  types:[]
+  types:{
+    slot: number
+    type: {
+    name: string
+    url: string
+    }
+  }[]
 }
